@@ -9,6 +9,7 @@
     <body>
 
         <h1>Ajouter un produit</h1>
+<!-- action : Transmet le formulaire à la page "traitement.php" -->
         <form action="traitement.php" method="POST">
             <p>
                 <label>

@@ -22,3 +22,4 @@
     }
 
     header("Location:index.php");
+?>
