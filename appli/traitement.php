@@ -21,5 +21,5 @@
         }
     }
 
-    header("Location:index.php");
+    header("Location:recap.php");
 ?>
