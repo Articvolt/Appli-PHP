@@ -46,11 +46,16 @@
                             "<td>".$index."</td>",
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                            "<td>".$product['qtt']."</td>",
+                            "<td>
+                            <a href='traitement.php?action=moins&id=".$index."'><button>-</button></a>
+                            ".number_format($product['qtt'])."
+                            <a href='traitement.php?action=plus&id=".$index."'><button>+</button></a>
+                            </td>",
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                             "<td id='button'><a href='traitement.php?action=supprimer&id=".$index."' ><button>Supprimer</button><a></td>",
                         "</tr>";
                     $totalGeneral += $product['total'];
+    
                 }
                 echo "<tr>",
                         "<td colspan=4>Total général : </td>",

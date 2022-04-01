@@ -48,6 +48,32 @@
                 die();
 
             break;
+
+            case "plus" :
+                if ($_SESSION['products'][$_GET['id']]['qtt'] >= 1) {
+                    ++$_SESSION['products'][$_GET['id']]['qtt'];
+        
+                    // le calcul du total est relancé
+                    $_SESSION['products'][$_GET['id']]['total'] =
+                    $_SESSION['products'][$_GET['id']]['qtt'] * $_SESSION['products'][$_GET['id']]['price'];
+                }
+                header("Location:recap.php");
+                die();
+
+            break;
+
+            case "moins" :
+                if ($_SESSION['products'][$_GET['id']]['qtt'] > 1) {
+                    --$_SESSION['products'][$_GET['id']]['qtt'];
+        
+                    $_SESSION['products'][$_GET['id']]['total'] =
+                    $_SESSION['products'][$_GET['id']]['qtt'] * $_SESSION['products'][$_GET['id']]['price'];
+                }
+                header("Location:recap.php");
+                die();
+                
+            break;
+        
         }
 
         
