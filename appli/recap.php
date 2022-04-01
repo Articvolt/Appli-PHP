@@ -10,6 +10,11 @@
     <title>Récapitulatif des produits</title>
 </head>
 <body>
+
+    <?php
+        // var_dump($_SESSION);
+    ?>
+
     <h1>RECAPITULATIF</h1>
     <nav>
         <ul>
@@ -47,12 +52,19 @@
                 }
                 echo "<tr>",
                         "<td colspan=4>Total général : </td>",
-                        "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
-                        "</tr>",
-                    "</tbody>",
-                    "</table>";
+                        "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>";
+                   
             }
         ?>
+                    <td id="reset">
+                        <a href="traitement.php?action=vider"><button>Vider le panier</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <p>
+        
+    </p>
 </body>
 </html>

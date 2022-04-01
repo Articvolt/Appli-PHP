@@ -57,8 +57,12 @@ table {
 }
 
 /* vise l'ensemble des blocks */
-.table tr th ,td {
+td {
     border: 1px black solid;
     /* aggrandit les blocks */
     padding: 1em;
+}
+
+#reset {
+    border: none;
 }

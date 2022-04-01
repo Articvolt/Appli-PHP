@@ -31,8 +31,16 @@
             break;
 
             case "vider" :
-                
+                // vide les tableaux dans session
+                unset($_SESSION['products']);
+                // redirige à la page 
+                header("Location:recap.php");
+                die();
+            
+            break;
         }
+
+        
     }
 
     
