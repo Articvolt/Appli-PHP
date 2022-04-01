@@ -42,11 +42,13 @@
                 $totalGeneral = 0;
                 foreach($_SESSION['products'] as $index => $product) {
                     echo "<tr>",
+                            // index est ce qui va définir la ligne du produit à cibler
                             "<td>".$index."</td>",
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                             "<td>".$product['qtt']."</td>",
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "<td id='button'><a href='traitement.php?action=supprimer&id=".$index."' ><button>Supprimer</button><a></td>",
                         "</tr>";
                     $totalGeneral += $product['total'];
                 }
@@ -56,7 +58,7 @@
                    
             }
         ?>
-                    <td id="reset">
+                    <td id='button'>
                         <a href="traitement.php?action=vider"><button>Vider le panier</button></a>
                     </td>
                 </tr>

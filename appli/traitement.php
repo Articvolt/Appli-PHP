@@ -38,6 +38,16 @@
                 die();
             
             break;
+
+            case "supprimer" :
+                if (isset($_GET['id']) && isset($_SESSION['products'][$_GET['id']])) {
+                    // "id" est lié à l'index de du produit dans "index.php"
+                    unset($_SESSION['products'][$_GET['id']]);
+                } 
+                header("Location:recap.php");
+                die();
+
+            break;
         }
 
         
