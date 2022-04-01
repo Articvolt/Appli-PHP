@@ -9,8 +9,14 @@
     <body>
 
         <h1>Ajouter un produit</h1>
+        <nav>
+            <ul>
+                <li><a href="http://localhost/Lisa/appli%20PHP/appli/">ACCUEIL</a></li>
+                <li><a href="http://localhost/Lisa/appli%20PHP/appli/recap.php">RECAPUTILATIF</a></li>
+            </ul>
+        </nav>
 <!-- action : Transmet le formulaire à la page "traitement.php" -->
-        <form action="traitement.php" method="POST">
+        <form action="traitement.php?action=ajouter" method="POST">
             <p>
                 <label>
                     Nom du produit :

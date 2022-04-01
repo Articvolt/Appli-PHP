@@ -7,6 +7,8 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* INDEX */
+
 h1 { 
     text-transform:uppercase;
     text-align: center;
@@ -21,4 +23,42 @@ form {
 input {
     text-align: center;
     
+}
+
+/* NAV */
+
+
+ul {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    gap: 5em;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* RECAP */
+
+body .table {
+    text-align: center;
+}
+
+table {
+    /* colle les block entre eux */
+    border-collapse: collapse;
+    /* centrer le tableau */
+    margin: auto;
+    width: 50%;
+    
+}
+
+/* vise l'ensemble des blocks */
+.table tr th ,td {
+    border: 1px black solid;
+    /* aggrandit les blocks */
+    padding: 1em;
 }

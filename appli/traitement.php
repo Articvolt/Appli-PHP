@@ -1,25 +1,39 @@
 <?php
     session_start();
 
-    if(isset($_POST['submit'])) {
+    if(isset($_GET['action'])) {
 
-        $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
-        $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
+        switch($_GET['action']) {
 
-        if($name && $price && $qtt) {
+            case "ajouter" :
+                if(isset($_POST['submit'])) {
+
+                    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
+                    $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
             
-            $product = [
-                "name" => $name,
-                "price" => $price,
-                "qtt" => $qtt,
-                "total" => $price*$qtt
-            ];
-
-            $_SESSION['products'] [] = $product;
+                    if($name && $price && $qtt) {
+                        
+                        $product = [
+                            "name" => $name,
+                            "price" => $price,
+                            "qtt" => $qtt,
+                            "total" => $price*$qtt
+                        ];
             
+                        $_SESSION['products'] [] = $product;
+                        
+                    }
+                }
+            
+                header("Location:recap.php");
+                die();
+            break;
+
+            case "vider" :
+                
         }
     }
 
-    header("Location:recap.php");
+    
 ?>
