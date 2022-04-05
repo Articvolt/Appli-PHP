@@ -11,8 +11,8 @@
         <h1>Ajouter un produit</h1>
         <nav>
             <ul>
-                <li><a href="http://localhost/Lisa/appli%20PHP/appli/">ACCUEIL</a></li>
-                <li><a href="http://localhost/Lisa/appli%20PHP/appli/recap.php">RECAPUTILATIF</a></li>
+                <li><a href="http://localhost/exercices/Appli-PHP/appli/index.php">ACCUEIL</a></li>
+                <li><a href="http://localhost/exercices/Appli-PHP/appli/recap.php">RECAPUTILATIF</a></li>
             </ul>
         </nav>
 <!-- action : Transmet le formulaire à la page "traitement.php" -->
