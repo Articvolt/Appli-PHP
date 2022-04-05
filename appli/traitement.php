@@ -1,12 +1,17 @@
 <?php
+    //créé un session ou récupère une session sur le serveur, via une requête GET/POST ou par un cookie
+    //$_SESSION en PHP est une variable qui permet de stocker des informations pour un utilisateur pendant la durée de sa visite sur le site.
     session_start();
 
     if(isset($_GET['action'])) {
 
+        // équivaut à une série d'instruction if
         switch($_GET['action']) {
 
             case "ajouter" :
+                // isset : Détermine si une variable est déclarée ET est différente de null
                 if(isset($_POST['submit'])) {
+                    // filter_input : récupère une variable externe et la filtre
                     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
                     $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
@@ -20,9 +25,11 @@
                         ];           
                         $_SESSION['products'] [] = $product;                        
                     }
-                }           
+                }    
+                // redirige dans le navigateur        
                 header("Location:recap.php");
                 die();
+            // Instruction permettant de sortir de la structure 
             break;
 
 // Vider le panier en totalité
@@ -31,6 +38,7 @@
                 unset($_SESSION['products']);
                 // redirige à la page 
                 header("Location:recap.php");
+                // die : équivaut à exit
                 die();           
             break;
 
@@ -78,3 +86,6 @@
 
     
 ?>
+
+<!-- Source :
+https://www.youtube.com/watch?v=Y29NdxwlovY -->

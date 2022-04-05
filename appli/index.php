@@ -11,6 +11,7 @@
         <h1>Ajouter un produit</h1>
         <nav>
             <ul>
+                <!-- href : c'est une redirection -->
                 <li><a href="http://localhost/exercices/Appli-PHP/appli/index.php">ACCUEIL</a></li>
                 <li><a href="http://localhost/exercices/Appli-PHP/appli/recap.php">RECAPUTILATIF</a></li>
             </ul>
@@ -18,6 +19,7 @@
 <!-- action : Transmet le formulaire à la page "traitement.php" -->
         <form action="traitement.php?action=ajouter" method="POST">
             <p>
+                <!-- légende pour un objet dans un interface utilisateur -->
                 <label>
                     Nom du produit :
                     <input type="text" name="name">

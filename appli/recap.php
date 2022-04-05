@@ -24,6 +24,7 @@
     </nav>
     <div class="table">
         <?php 
+        // || : ... OU ...
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
                 echo "<p>Aucun produit en session...</p>";
             }
