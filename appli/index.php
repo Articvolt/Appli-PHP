@@ -14,6 +14,7 @@
                 <!-- href : c'est une redirection -->
                 <li><a href="http://localhost/exercices/Appli-PHP/appli/index.php">ACCUEIL</a></li>
                 <li><a href="http://localhost/exercices/Appli-PHP/appli/recap.php">RECAPUTILATIF</a></li>
+                <li>Total produits : <?php echo $product['qtt'] ?> </li>
             </ul>
         </nav>
 <!-- action : Transmet le formulaire à la page "traitement.php" -->
