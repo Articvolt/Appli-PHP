@@ -27,9 +27,12 @@
     <div class="table">
         <?php 
         // || : ... OU ...
+            // si (la variable n'est pas déclarée ou nulle dans la session OU vide) / !XXX correspond à l'inverse
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
+                //alors afficher qu'il n'y a rien
                 echo "<p>Aucun produit en session...</p>";
             }
+            // sinon on affiche un tableau 
             else {
                 // Ossature du thead du tableau
                 echo "<table>",
@@ -43,22 +46,29 @@
                             "</tr>",
                         "</thead>",
                         "<tbody>";
+                // On définit le total à 0 initialement 
                 $totalGeneral = 0;
+                // pour chaque 'products' dans la session, la variable product est dans la variable index
                 foreach($_SESSION['products'] as $index => $product) {
                     echo "<tr>",
                             // index est ce qui va définir la ligne du produit à cibler
                             "<td>".$index."</td>",
+                            // nom du produit définit dans "index.php"  au name = "name" et énoncé dans traitement
                             "<td>".$product['name']."</td>",
                             // "&nbsp;" correspond à un espace
+                            // au format numérique, dans le formulaire, la ligne du prix (name = price")
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            // affichage du nombre en format numérique (name="qtt") avec ajout de deux boutons
                             "<td>
                             <a href='traitement.php?action=moins&id=".$index."'><button>-</button></a>
                             ".number_format($product['qtt'])."
                             <a href='traitement.php?action=plus&id=".$index."'><button>+</button></a>
                             </td>",
+                            // affichage tu total 
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                             "<td id='button'><a href='traitement.php?action=supprimer&id=".$index."' ><button>Supprimer</button><a></td>",
                         "</tr>";
+                    // On additionne au total chaque 'total' de chaque $product
                     $totalGeneral += $product['total'];
     
                 }
