@@ -107,3 +107,17 @@ $_COOKIE : variable contenant toutes les variables passées via le cookie HTTP
 $_REQUEST : variable qui contient toutes les variables envoyées via HTTP GET / HTTP POST
 -->
 
+<!-- 
+tableau associatif : tableau contenant des clés textuelles associées à des valeurs
+EXEMPLE : $ages = ['Mathilde' => 27, 'Pierre' => 29, 'Amandine' => 21];
+            
+            $mails['Mathilde'] = 'math@gmail.com';
+            $mails['Pierre'] = 'pierre.giraud@edhec.com';
+            $mails['Amandine'] = 'amandine@lp.fr';
+https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/tableau-associatif/        
+-->
+
+<!--
+cookie : un fichier que le serveur envoi sur l'ordinateur de l'utilisateur, souvent utilisé pour reconnaîtres les users
+https://phpsources.net/tutoriel-cookies.htm
+-->
