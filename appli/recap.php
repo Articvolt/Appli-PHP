@@ -21,7 +21,7 @@
         <ul>
             <li><a href="http://localhost/exercices/Appli-PHP/appli/index.php">ACCUEIL</a></li>
             <li><a href="http://localhost/exercices/Appli-PHP/appli/recap.php">RECAPUTILATIF</a></li>
-            <li>Total produits : <?php echo $product['qtt'] ?> </li>
+            <li>Total produits : <?php echo count($_SESSION['products']) ?> </li>
         </ul>
     </nav>
     <div class="table">
@@ -48,6 +48,7 @@
                         "<tbody>";
                 // On définit le total à 0 initialement 
                 $totalGeneral = 0;
+                $totalProduit = 0;
                 // pour chaque 'products' dans la session, la variable product est dans la variable index
                 foreach($_SESSION['products'] as $index => $product) {
                     echo "<tr>",
@@ -71,6 +72,7 @@
                         "</tr>";
                     // On additionne au total chaque 'total' de chaque $product
                     $totalGeneral += $product['total'];
+                    $totalProduit += $product['qtt'];
     
                 }
                 // affichage de la dernière ligne du tableau avec sa fermeture
