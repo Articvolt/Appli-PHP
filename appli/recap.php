@@ -66,12 +66,14 @@
                             </td>",
                             // affichage tu total 
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            // ajout d'un bouton supprimer ligne
                             "<td id='button'><a href='traitement.php?action=supprimer&id=".$index."' ><button>Supprimer</button><a></td>",
                         "</tr>";
                     // On additionne au total chaque 'total' de chaque $product
                     $totalGeneral += $product['total'];
     
                 }
+                // affichage de la dernière ligne du tableau avec sa fermeture
                 echo "<tr>",
                         "<td colspan=4>Total général : </td>",
                         "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>";
