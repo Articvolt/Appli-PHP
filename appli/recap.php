@@ -19,9 +19,8 @@
     <!-- Lien page en navigation -->
     <nav>
         <ul>
-            <li><a href="http://localhost/exercices/Appli-PHP/appli/index.php">ACCUEIL</a></li>
-            <li><a href="http://localhost/exercices/Appli-PHP/appli/recap.php">RECAPUTILATIF</a></li>
-            <li>Total produits : <?php echo count($_SESSION['products']) ?> </li>
+            <li><a href="http://localhost/exercices/PHP-application/appli/index.php">ACCUEIL</a></li>
+            <li><a href="http://localhost/exercices/PHP-application/appli/recap.php">RECAPUTILATIF</a></li>
         </ul>
     </nav>
     <div class="table">
