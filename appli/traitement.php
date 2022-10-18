@@ -73,6 +73,8 @@
         
                     $_SESSION['products'][$_GET['id']]['total'] =
                     $_SESSION['products'][$_GET['id']]['qtt'] * $_SESSION['products'][$_GET['id']]['price'];
+                } else  {
+                    
                 }
                 header("Location:recap.php");
                 die();               
