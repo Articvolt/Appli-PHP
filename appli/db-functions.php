@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-
+require 'db-config.php';
 
 // possibilité de mettre les attributs dans un tableau associatif pour la création de la chaîne PDO
 $options = [
@@ -16,22 +13,30 @@ $options = [
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
 ];
 
+
 //connect PDO 
 try {
     $db = new PDO("mysql:host=$servername;dbname=store", $username, $password, $options);
     // https://www.php.net/manual/en/pdo.setattribute.php
+    $query = $db->prepare('SELECT * FROM product WHERE id= :id');
+    $query->execute(['id'=> $_GET['id']]);
+    // FETCHALL
+    $products = $query->fetchAll(PDO::FETCH_OBJ);
+    $product = $query->fetch(PDO::FETCH_OBJ);
     echo "Connected successfully";
     } catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+        //quand une erreur est rencontrée, elle est tansmise sous forme de message
+    echo "Connection failed: ".$e->getMessage();
     }
 
 //création d'une commande MySQL à l'éxecution puis retourne un objet
-$findAll = $db->query('SELECT * FROM product')->fetchAll();
-var_dump($findAll);
+// $findAll = $db->query('SELECT * FROM product')->fetchAll();
+// var_dump($findAll);
 
 // création d'une commande MySQL pour sélectionner une ligne
-$id = $db->query('SELECT * FROM products ORDER BY DESC LIMIT 1')->fetch();
-echo $id = 1;
+// $id = $db->query('SELECT * FROM products ORDER BY DESC LIMIT 1')->fetch();
+
+
 ?>
 
 <!-- :: opérateur de résolution de portée = permet d'accéder à un attibut ou à une fonction statique qui se touve à l'intérieur d'une classe -->
