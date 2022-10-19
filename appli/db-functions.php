@@ -7,14 +7,20 @@ require 'db-config.php';
 try {
     $db = new PDO("mysql:host=$servername;dbname=store", $username, $password, $options);
         
-        $query = $db->prepare('SELECT * FROM product WHERE id= :id');
-        $query->execute(['id'=> $_GET['id']]);
-        // FETCHALL
-        $products = $query->fetchAll(PDO::FETCH_OBJ);
-        //FETCH
-        $product = $query->fetch(PDO::FETCH_OBJ);
+        $sql='SELECT * FROM product';
+        
+        $results = $db->query($sql);
 
-        echo "Connected successfully";
+        // FETCH ALL
+        $products = $results->fetchAll(PDO::FETCH_ASSOC);
+        // $results->closeCursor(); -> permet de fermer le SELECT, inutile si on veux modifier la base de données.
+
+        //FETCH
+        foreach($products as $product) {
+            echo '<p>'.$product['name'].'</p>';
+            echo '<p>'.$product['description'].'</p>';
+            echo '<p>'.$product['price'].'</p>';
+        }
 
     } catch(PDOException $e) {
 
