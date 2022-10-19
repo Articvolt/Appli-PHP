@@ -25,16 +25,13 @@ try {
     echo "Connection failed: " . $e->getMessage();
     }
 
-//création d'une commande d'éxecution
-$SQLexecute = $db->prepare('SELECT name, description, price  FROM product');
-//lancement de la commande
-$SQLexecute->execute();
-// methode pour récuperer les lignes de la base de données
-$products = $SQLexecute->fetchAll();
-//voir si la commande fonctionne
-// PDOStatement::fetchAll — Récupère les lignes restantes d'un ensemble de résultats
-var_dump($products);
+//création d'une commande MySQL à l'éxecution puis retourne un objet
+$findAll = $db->query('SELECT * FROM product')->fetchAll();
+var_dump($findAll);
 
+// création d'une commande MySQL pour sélectionner une ligne
+$id = $db->query('SELECT * FROM products ORDER BY DESC LIMIT 1')->fetch();
+echo $id = 1;
 ?>
 
 <!-- :: opérateur de résolution de portée = permet d'accéder à un attibut ou à une fonction statique qui se touve à l'intérieur d'une classe -->
