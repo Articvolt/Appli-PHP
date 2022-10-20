@@ -1,6 +1,7 @@
 <?php
 
 require 'db-config.php';
+
     
     function findAll($findAll) {
         $db=SeConnecter();
