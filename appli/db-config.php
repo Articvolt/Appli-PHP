@@ -16,3 +16,18 @@ $options = [
     // UTF-8 : Universal Character Set Transformation Format - 8 bits => codage de caractères informatiques
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
 ];
+
+function SeConnecter(){
+    //connect PDO 
+    try {
+        // fonction connexion()
+        $db = new PDO($dsn, $username, $password, $options);       
+        } catch(PDOException $e) {
+        //quand une erreur est rencontrée, elle est transmise sous forme de message
+        echo "Connection failed: ".$e->getMessage();
+
+    
+    }
+
+    return $db;
+}
