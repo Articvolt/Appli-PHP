@@ -5,7 +5,7 @@ require 'db-config.php';
 
 //connect PDO 
 try {
-    $db = new PDO("mysql:host=$servername;dbname=store", $username, $password, $options);
+    $db = new PDO($dsn, $username, $password, $options);
         
         $sql='SELECT * FROM product';
         $results = $db->query($sql);
